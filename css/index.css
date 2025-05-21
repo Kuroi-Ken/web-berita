@@ -1,5 +1,4 @@
 body {
-  background: #2A2A2A;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -13,7 +12,10 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px 40px;
-  position: relative;
+  z-index: 3;
+  position: fixed;
+  left: 0;
+  right: 0;
 }
 
 .search-wrapper {
@@ -95,7 +97,7 @@ body {
     font-size: 24px;
     text-align: center;
     padding: 20px 0;
-    padding-top: 40px;
+    padding-top: 20px;
     display: flex;
     justify-content: center;
     transition: opacity 600ms ease;
@@ -167,4 +169,81 @@ body {
 .head-contain {
     margin-left: 60px;
     padding: 20px;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.slides {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  transition: transform 1s ease;
+}
+
+.slide {
+  flex: 1 0 100%;
+  padding: 100px 60px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.slide1 {
+  background: #2A2A2A;
+}
+
+.slide2 {
+  background: #1f1f1f;
+}
+
+.slide h1 {
+  font-size: 70px;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.slide p {
+  font-size: 22px;
+  margin: 20px 0;
+}
+
+.explore {
+  background-color: #777;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.navigation-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #777;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #000;
 }

@@ -11,7 +11,6 @@ header("Pragma: no-cache");
 header("Expires: 0"); 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +23,7 @@ header("Expires: 0");
 </head>
 
 <body>
-    <div class="landing1">
+    <div class="menu1">
         <div class="topbar">
             <div class="search-wrapper">
                 <div class="search-container">
@@ -35,9 +34,10 @@ header("Expires: 0");
                 </div>
             </div>
             <div class="title">
-                <span class="span-text">Game News</span>
+                <span class="span-text">Web Title</span>
             </div>
         </div>
+
         <div class="sidebar">
             <div class="menu-icon">
                 <i data-feather="menu"></i>
@@ -50,24 +50,44 @@ header("Expires: 0");
                 <li><a href="php/logout.php">Logout</a></li>
             </ul>
         </div>
-        <div class="content">
+
+        <div class="slider">
+            <div class="slides">
+                <div class="slide slide1">
+                    <h1>LOREM IPSUM</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor est.</p>
+                    <button class="explore">EXPLORE MORE</button>
+                </div>
+                <div class="slide slide2">
+                    <h1>NEW LOREM</h1>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    <button class="explore">EXPLORE MORE</button>
+                </div>
+            </div>
+            <div class="navigation-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
         </div>
     </div>
-    <div class="landing2">
-
+    <div class="menu2">
+        ewvwbwe
+        <br>nvwnvwe
+        br
     </div>
     <script>
     feather.replace();
 
-    if (window.history.replaceState) {
-        window.history.replaceState(null, null, window.location.href);
-    }
+    const slides = document.querySelector('.slides');
+    const dots = document.querySelectorAll('.dot');
 
-    window.onpageshow = function(event) {
-        if (event.persisted) {
-            window.location.reload();
-        }
-    };
+    let index = 0;
+    setInterval(() => {
+        index = (index + 1) % dots.length;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }, 5000);
     </script>
 </body>
 
