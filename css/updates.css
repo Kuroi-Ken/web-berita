@@ -1,0 +1,497 @@
+/* updates.css - Dedicated CSS file for the Updates tab */
+
+/* ===== GENERAL UPDATES SECTION STYLING ===== */
+.updates,
+.game-news,
+.app-updates {
+  margin-bottom: 40px;
+}
+
+.updates h2,
+.game-news h2,
+.app-updates h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+/* ===== UPDATE CARDS ===== */
+.update-card {
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.app-card {
+  background: linear-gradient(to bottom, #f9f9f9, white);
+}
+
+.update-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #f4f4f4;
+  border-bottom: 1px solid #eee;
+}
+
+.update-title {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.update-date {
+  color: #777;
+  font-size: 13px;
+}
+
+.update-content {
+  padding: 20px;
+}
+
+/* ===== UPDATE IMAGES ===== */
+.update-image {
+  margin-bottom: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.update-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ===== UPDATE TEXT CONTENT ===== */
+.update-content p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== UPDATE FEATURES ===== */
+.update-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 8px 12px;
+  border-radius: 15px;
+  font-size: 13px;
+  color: #666;
+  transition: background-color 0.2s;
+}
+
+.feature:hover {
+  background: #f0f0f0;
+}
+
+.feature svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  color: #555;
+}
+
+/* ===== READ MORE BUTTON ===== */
+.read-more-btn {
+  display: inline-block;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.read-more-btn:hover {
+  background: #222;
+}
+
+/* ===== VIDEO PREVIEW ===== */
+.video-preview {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-thumbnail {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-button svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+  margin-left: 3px; /* Adjust for visual centering */
+}
+
+.video-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.video-title {
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+
+.video-duration {
+  color: #777;
+  font-size: 12px;
+  background: #f5f5f5;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* ===== QUOTE STYLING ===== */
+.update-quote {
+  padding: 15px 20px;
+  background: #f9f9f9;
+  border-left: 3px solid #333;
+  margin: 20px 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.update-quote blockquote {
+  font-style: italic;
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.update-quote cite {
+  display: block;
+  font-size: 12px;
+  color: #777;
+  text-align: right;
+  font-style: normal;
+}
+
+/* ===== APP FEATURES ===== */
+.app-features {
+  margin: 20px 0;
+}
+
+.app-feature {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  flex: 0 0 40px;
+  height: 40px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.feature-icon svg {
+  width: 20px;
+  height: 20px;
+  color: #333;
+}
+
+.feature-details {
+  flex: 1;
+}
+
+.feature-details h4 {
+  margin: 0 0 5px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.feature-details p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* ===== APP DOWNLOAD SECTION ===== */
+.app-download {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.app-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  min-width: 120px;
+}
+
+.app-button:hover {
+  background: #222;
+}
+
+.app-button svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+/* ===== APP RATING ===== */
+.app-rating {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.stars {
+  display: flex;
+  color: #ffc107;
+  margin-right: 10px;
+}
+
+.stars svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 2px;
+  fill: currentColor;
+}
+
+.rating-text {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ===== GAME UPDATE SPECIFIC STYLING ===== */
+.game-updates .update-card {
+  border-left: 3px solid #007bff;
+}
+
+.game-news .update-card {
+  border-left: 3px solid #28a745;
+}
+
+.app-updates .update-card {
+  border-left: 3px solid #6f42c1;
+}
+
+/* ===== UPDATE BUTTONS ===== */
+.update-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.update-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.update-button:hover {
+  background: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.update-button svg {
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media screen and (max-width: 768px) {
+  .update-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .update-features {
+    flex-direction: column;
+  }
+
+  .app-download {
+    flex-direction: column;
+  }
+
+  .app-feature {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-icon {
+    margin: 0 auto 10px auto;
+  }
+
+  .video-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .update-quote {
+    padding: 10px 15px;
+  }
+
+  .stars {
+    justify-content: center;
+  }
+
+  .app-rating {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/* ===== LOADING ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.update-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.update-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.update-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.update-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* ===== SPECIAL EFFECTS ===== */
+.feature:hover svg {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+.play-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.play-button:hover::before {
+  opacity: 1;
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+.update-card:focus-within {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.read-more-btn:focus,
+.app-button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .update-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .video-preview,
+  .app-download {
+    display: none;
+  }
+}
