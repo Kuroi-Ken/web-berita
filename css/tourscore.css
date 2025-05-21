@@ -1,0 +1,757 @@
+/* tournament-score.css - Dedicated CSS file for the Tournament Score tab */
+
+/* ===== GENERAL SECTION STYLING ===== */
+.tournament-standings {
+  margin-bottom: 40px;
+}
+
+.tournament-standings h2,
+.upcoming-matches h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  color: #333;
+}
+
+/* ===== ESPORTS HEADER WITH TOURNAMENT INFO ===== */
+.esports-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #f9f9f9, #fff);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.esports-logo {
+  flex: 0 0 60px;
+  height: 60px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.esports-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.tournament-info {
+  flex: 1;
+}
+
+.tournament-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.tournament-date {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.prize-pool {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2c7;
+}
+
+/* ===== STANDINGS TABLE ===== */
+.standings-table {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.standings-header {
+  display: flex;
+  background: #f4f4f4;
+  font-weight: bold;
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.standings-row {
+  display: flex;
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+
+.standings-row:hover {
+  background-color: #f9f9f9;
+}
+
+.standings-row:last-child {
+  border-bottom: none;
+}
+
+.rank-col {
+  flex: 0 0 40px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.team-col {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  font-weight: 500;
+}
+
+.region-col {
+  flex: 0 0 50px;
+  text-align: center;
+  font-size: 12px;
+  padding: 2px 0;
+  margin: 0 5px;
+  border-radius: 3px;
+  background: #f0f0f0;
+}
+
+.match-col,
+.win-col,
+.loss-col {
+  flex: 0 0 40px;
+  text-align: center;
+}
+
+.points-col {
+  flex: 0 0 60px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.team-logo-small,
+.player-logo {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.flag-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+}
+
+/* ===== MATCH RESULT CARDS ===== */
+.result-card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.match-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #777;
+  font-size: 13px;
+}
+
+.tournament-name {
+  font-weight: 500;
+}
+
+.match-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.home-team {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.away-team {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.team-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  margin: 0 10px;
+  border-radius: 50%;
+}
+
+.team-name {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-radius: 5px;
+  padding: 5px 15px;
+  font-size: 22px;
+  font-weight: bold;
+  min-width: 80px;
+  text-align: center;
+}
+
+.score-divider {
+  margin: 0 5px;
+  color: #999;
+}
+
+/* ===== FEATURED MATCH ===== */
+.featured-match {
+  border-left: 4px solid #6b72ff; /* Valorant blue */
+  background: linear-gradient(to right, rgba(107, 114, 255, 0.05), white);
+}
+
+/* ===== MAP SCORES FOR VALORANT ===== */
+.map-scores {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  overflow-x: auto;
+  padding: 5px 0;
+}
+
+.map {
+  background: #f5f5f5;
+  border-radius: 5px;
+  padding: 8px 12px;
+  text-align: center;
+  min-width: 80px;
+}
+
+.map-name {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.map-score {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ===== HEROES USED FOR MOBILE LEGENDS ===== */
+.heroes-used {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.team-heroes {
+  display: flex;
+  align-items: center;
+}
+
+.heroes-label {
+  font-size: 12px;
+  color: #777;
+  margin-right: 10px;
+}
+
+.hero-icons {
+  display: flex;
+  gap: 5px;
+}
+
+.hero-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+}
+
+/* ===== MATCH DETAILS FOR DOTA 2 ===== */
+.match-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-label {
+  font-weight: 500;
+  color: #555;
+}
+
+.detail-value {
+  color: #333;
+}
+
+/* ===== MVP INFO ===== */
+.mvp-info {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.mvp {
+  display: flex;
+  align-items: center;
+  background: #fffbf0;
+  border: 1px solid #ffeeba;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 13px;
+  color: #856404;
+}
+
+.mvp svg {
+  width: 16px;
+  height: 16px;
+  color: #ffc107;
+  margin-right: 8px;
+}
+
+/* ===== PRIZE INFO ===== */
+.prize-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.prize,
+.views {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #666;
+}
+
+.prize svg,
+.views svg {
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+  color: #777;
+}
+
+/* ===== UPCOMING MATCHES ===== */
+.upcoming-matches {
+  margin-bottom: 40px;
+}
+
+.upcoming-match {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.upcoming-match:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.upcoming-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.upcoming-game {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.upcoming-game img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.upcoming-date {
+  font-size: 13px;
+  color: #777;
+}
+
+.upcoming-teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.upcoming-team {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.upcoming-team:first-child {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.upcoming-team:last-child {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.vs {
+  margin: 0 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #999;
+}
+
+/* ===== GAME-SPECIFIC COLOR SCHEMES ===== */
+/* Valorant */
+.valorant-section .esports-header {
+  background: linear-gradient(to right, rgba(255, 70, 85, 0.05), white);
+}
+
+.valorant-section .featured-match {
+  border-left-color: #ff4655;
+}
+
+.valorant-section .region-col {
+  background: rgba(255, 70, 85, 0.1);
+  color: #ff4655;
+}
+
+/* Mobile Legends */
+.ml-section .esports-header {
+  background: linear-gradient(to right, rgba(0, 119, 200, 0.05), white);
+}
+
+.ml-section .featured-match {
+  border-left-color: #0077c8;
+}
+
+.ml-section .region-col {
+  background: rgba(0, 119, 200, 0.1);
+  color: #0077c8;
+}
+
+/* Dota 2 */
+.dota-section .esports-header {
+  background: linear-gradient(to right, rgba(255, 48, 48, 0.05), white);
+}
+
+.dota-section .featured-match {
+  border-left-color: #ff3030;
+}
+
+.dota-section .region-col {
+  background: rgba(255, 48, 48, 0.1);
+  color: #ff3030;
+}
+
+/* ===== STREAMING INFO ===== */
+.stream-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.stream-platform {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #666;
+  padding: 5px 10px;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+
+.stream-platform img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+/* ===== LIVE MATCH INDICATOR ===== */
+.live-match {
+  position: relative;
+}
+
+.live-match::before {
+  content: "LIVE";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: #dc3545;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ===== TOURNAMENT STATS SECTION ===== */
+.tournament-stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  gap: 15px;
+}
+
+.stat-card {
+  flex: 1;
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #777;
+}
+
+/* ===== TOP PLAYERS SECTION ===== */
+.top-players {
+  margin: 20px 0;
+}
+
+.player-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.player-rank {
+  flex: 0 0 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: #555;
+}
+
+.player-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.player-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.player-name-team {
+  display: flex;
+  flex-direction: column;
+}
+
+.player-name {
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.player-team {
+  font-size: 12px;
+  color: #777;
+}
+
+.player-stats {
+  display: flex;
+  gap: 15px;
+}
+
+.player-stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.stat-name {
+  font-size: 11px;
+  color: #777;
+  text-transform: uppercase;
+}
+
+/* ===== GAME-SPECIFIC BADGES ===== */
+.game-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.valorant-badge {
+  background: rgba(255, 70, 85, 0.1);
+  color: #ff4655;
+}
+
+.ml-badge {
+  background: rgba(0, 119, 200, 0.1);
+  color: #0077c8;
+}
+
+.dota-badge {
+  background: rgba(255, 48, 48, 0.1);
+  color: #ff3030;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media screen and (max-width: 768px) {
+  .tournament-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .match-result {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .team {
+    justify-content: center;
+  }
+
+  .home-team,
+  .away-team {
+    text-align: center;
+  }
+
+  .map-scores {
+    flex-wrap: wrap;
+  }
+
+  .match-details {
+    flex-direction: column;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .prize-info {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .heroes-used {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .upcoming-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .upcoming-teams {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .upcoming-team {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .vs {
+    margin: 10px 0;
+  }
+
+  .standings-header,
+  .standings-row {
+    font-size: 12px;
+  }
+
+  .rank-col {
+    flex: 0 0 30px;
+  }
+
+  .region-col {
+    flex: 0 0 40px;
+  }
+
+  .match-col,
+  .win-col,
+  .loss-col,
+  .points-col {
+    flex: 0 0 30px;
+  }
+}
