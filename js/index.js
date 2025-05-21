@@ -1,38 +1,78 @@
 feather.replace();
 
-const slides = document.querySelector('.slides');
-const dots = document.querySelectorAll('.dot');
-const sidebar = document.getElementById('sidebar');
-const menuIcon = document.getElementById('menuIcon');
+const slides = document.querySelector(".slides");
+const navigationDots = document.querySelectorAll(".navigation-dots .dot");
+const sidebar = document.getElementById("sidebar");
+const menuIcon = document.getElementById("menuIcon");
 
 let currentSlideIndex = 0;
 let slideInterval;
+const TOTAL_SLIDES = 2;
 
+/**
+ * Updates the slider to show the specified slide
+ * @param {number} newIndex - The index of the slide to show (0 or 1)
+ */
 function updateSlider(newIndex) {
-    slides.style.transform = `translateX(-${newIndex * 100}%)`;
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[newIndex].classList.add('active');
-    currentSlideIndex = newIndex;
+  // Ensure newIndex is always valid (0 or 1)
+  newIndex = newIndex % TOTAL_SLIDES;
+
+  // Transform the slides container to show the selected slide
+  // PERBAIKAN: Mengubah formula dari newIndex * 100% menjadi newIndex * 50%
+  // Karena masing-masing slide seharusnya mengambil 50% dari lebar container
+  slides.style.transform = `translateX(-${newIndex * 50}%)`;
+
+  // Update the active state of the navigation dots
+  navigationDots.forEach((dot, index) => {
+    if (index === newIndex) {
+      dot.classList.add("active");
+    } else {
+      dot.classList.remove("active");
+    }
+  });
+
+  // Update the current slide index
+  currentSlideIndex = newIndex;
 }
 
+/**
+ * Starts the automatic slide transition
+ */
 function startAutoSlide() {
-    slideInterval = setInterval(() => {
-        currentSlideIndex = (currentSlideIndex + 1) % dots.length;
-        updateSlider(currentSlideIndex);
-    }, 5000);
+  // Clear any existing interval
+  if (slideInterval) {
+    clearInterval(slideInterval);
+  }
+
+  // Set a new interval to switch slides every 5 seconds
+  slideInterval = setInterval(() => {
+    // Move to the next slide (always cycling between 0 and 1)
+    let nextSlide = (currentSlideIndex + 1) % TOTAL_SLIDES;
+    updateSlider(nextSlide);
+  }, 5000);
 }
 
-dots.forEach(dot => {
-    dot.addEventListener('click', (event) => {
-        clearInterval(slideInterval);
-        const slideIndex = parseInt(event.target.dataset.slide);
-        updateSlider(slideIndex);
-        startAutoSlide();
-    });
+// Add click event listeners to the navigation dots
+navigationDots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    // Stop the automatic slide transition
+    clearInterval(slideInterval);
+
+    // Show the selected slide
+    updateSlider(index);
+
+    // Restart the automatic slide transition
+    startAutoSlide();
+  });
 });
 
-menuIcon.addEventListener('click', () => {
-    sidebar.classList.toggle('sidebar-expanded');
+// Add click event listener to the menu icon
+menuIcon.addEventListener("click", () => {
+  sidebar.classList.toggle("sidebar-expanded");
 });
 
+// Start the automatic slide transition when the page loads
 startAutoSlide();
+
+// Inisialisasi dengan slide pertama
+updateSlider(0);
