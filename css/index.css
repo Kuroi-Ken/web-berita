@@ -1,0 +1,173 @@
+body {
+  background: #2A2A2A;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* TOPBAR */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.search-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #2A2A2A;
+  padding: 5px 10px;
+  border-radius: 60px;
+  outline: solid white 1px;
+  max-width: 400px;
+  width: 100%;
+  height: 40px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  padding: 6px 10px;
+  background: transparent;
+  color: white;
+}
+
+.search-btn {
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+}
+
+.search-btn .feather {
+  width: 20px;
+  height: 20px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin-left: -100px;
+}
+
+.span-text {
+  font-size: 30px;
+  color: white;
+  margin-right: 30px;
+}
+
+
+/* SIDEBAR */
+
+
+.sidebar {
+    position: fixed;
+    padding: 15px 20px;
+    top: 0;
+    left: 0;
+    width: 60px; /* Initial width with only icon */
+    height: 100vh;
+    background-color: #333;
+    overflow: hidden;
+    transition: width 600ms ease;
+}
+
+
+.sidebar:hover {
+    width: 200px; /* Expanded width on hover */
+}
+
+/* Menu icon styling */
+.menu-icon {
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px 0;
+    padding-top: 40px;
+    justify-content: center;
+    transition: opacity 600ms ease;
+}
+
+.nav li .game{
+    gap: 10px;
+    align-items: center;
+    display: flex;
+}
+
+.nav li a .arrow{
+    transition: transform 300ms ease;
+    margin-top: 5px;
+}
+
+/* Hide menu icon when sidebar is expanded */
+.sidebar:hover .menu-icon {
+    opacity: 0;
+}
+
+.sidebar li:hover >  a .arrow{
+    transform: rotate(90deg);
+}
+
+/* Navigation links styling */
+.nav {
+    list-style: none;
+    padding: 20px 0;
+    position: fixed;
+}
+
+.nav li {
+    padding: 15px 0;
+}
+
+.nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    padding-left: 20px;
+    display: block;
+    opacity: 0; /* Hidden initially */
+    transition: opacity 600ms ease, transform 600ms ease;
+    transform: translateX(-10px); /* Slide effect */
+}
+
+/* Show links when sidebar is expanded */
+.sidebar:hover .nav li a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.home {
+    list-style: none;
+    padding-left: 20px;
+    opacity: 0; 
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 1000ms ease, max-height 1000ms ease;
+}
+
+
+.nav li:hover .home {
+    opacity: 1;
+    max-height: 300px; 
+}
+
+
+.head-contain {
+    margin-left: 60px; /* Offset content when sidebar is not hovered */
+    padding: 20px;
+}
+
