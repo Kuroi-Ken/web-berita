@@ -1,5 +1,9 @@
+// Add this JavaScript to js/index.js
+
+// Initialize feather icons
 feather.replace();
 
+// Slider functionality from your original code
 const slides = document.querySelector(".slides");
 const navigationDots = document.querySelectorAll(".navigation-dots .dot");
 const sidebar = document.getElementById("sidebar");
@@ -9,20 +13,10 @@ let currentSlideIndex = 0;
 let slideInterval;
 const TOTAL_SLIDES = 2;
 
-/**
- * Updates the slider to show the specified slide
- * @param {number} newIndex - The index of the slide to show (0 or 1)
- */
 function updateSlider(newIndex) {
-  // Ensure newIndex is always valid (0 or 1)
   newIndex = newIndex % TOTAL_SLIDES;
-
-  // Transform the slides container to show the selected slide
-  // PERBAIKAN: Mengubah formula dari newIndex * 100% menjadi newIndex * 50%
-  // Karena masing-masing slide seharusnya mengambil 50% dari lebar container
   slides.style.transform = `translateX(-${newIndex * 50}%)`;
 
-  // Update the active state of the navigation dots
   navigationDots.forEach((dot, index) => {
     if (index === newIndex) {
       dot.classList.add("active");
@@ -31,48 +25,120 @@ function updateSlider(newIndex) {
     }
   });
 
-  // Update the current slide index
   currentSlideIndex = newIndex;
 }
 
-/**
- * Starts the automatic slide transition
- */
 function startAutoSlide() {
-  // Clear any existing interval
   if (slideInterval) {
     clearInterval(slideInterval);
   }
 
-  // Set a new interval to switch slides every 5 seconds
   slideInterval = setInterval(() => {
-    // Move to the next slide (always cycling between 0 and 1)
     let nextSlide = (currentSlideIndex + 1) % TOTAL_SLIDES;
     updateSlider(nextSlide);
   }, 5000);
 }
 
-// Add click event listeners to the navigation dots
 navigationDots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
-    // Stop the automatic slide transition
     clearInterval(slideInterval);
-
-    // Show the selected slide
     updateSlider(index);
-
-    // Restart the automatic slide transition
     startAutoSlide();
   });
 });
 
-// Add click event listener to the menu icon
 menuIcon.addEventListener("click", () => {
   sidebar.classList.toggle("sidebar-expanded");
 });
 
-// Start the automatic slide transition when the page loads
 startAutoSlide();
-
-// Inisialisasi dengan slide pertama
 updateSlider(0);
+
+// Recommended cards slider functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const recommendedCards = document.querySelectorAll(".recommended-card");
+  const recommendedDots = document.querySelectorAll(".dots .dot");
+  let currentRecommendedIndex = 0;
+
+  function showRecommendedCard(index) {
+    recommendedCards.forEach((card) => {
+      card.classList.remove("active");
+    });
+
+    recommendedDots.forEach((dot) => {
+      dot.classList.remove("active");
+    });
+
+    recommendedCards[index].classList.add("active");
+    recommendedDots[index].classList.add("active");
+  }
+
+  recommendedDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentRecommendedIndex = index;
+      showRecommendedCard(currentRecommendedIndex);
+    });
+  });
+
+  // Auto slide for recommended cards
+  setInterval(() => {
+    currentRecommendedIndex =
+      (currentRecommendedIndex + 1) % recommendedCards.length;
+    showRecommendedCard(currentRecommendedIndex);
+  }, 5000);
+
+  // Tab navigation functionality
+  const tabs = document.querySelectorAll(".tab");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Remove active class from all tabs
+      tabs.forEach((t) => t.classList.remove("active"));
+
+      // Add active class to clicked tab
+      tab.classList.add("active");
+
+      // Hide all tab contents
+      tabContents.forEach((content) => {
+        content.style.display = "none";
+      });
+
+      // Show the selected tab content
+      const tabName = tab.getAttribute("data-tab");
+      document.getElementById(`${tabName}-content`).style.display = "block";
+    });
+  });
+});
+
+// Scroll effect for the topbar
+document.addEventListener("DOMContentLoaded", function () {
+  const topbar = document.querySelector(".topbar");
+  const menu2 = document.querySelector(".menu2");
+
+  // Set initial state
+  topbar.classList.add("transparent");
+
+  // Function to check scroll position and update topbar
+  function checkScroll() {
+    // Get the position of menu2
+    const menu2Position = menu2.getBoundingClientRect().top;
+
+    // If menu2 is at the top of the viewport or above, add solid class
+    if (menu2Position <= 60) {
+      // 60px threshold accounts for the topbar height
+      topbar.classList.remove("transparent");
+      topbar.classList.add("solid");
+    } else {
+      // Otherwise, keep it transparent
+      topbar.classList.add("transparent");
+      topbar.classList.remove("solid");
+    }
+  }
+
+  // Add scroll event listener
+  window.addEventListener("scroll", checkScroll);
+
+  // Check initial position (in case page is loaded scrolled down)
+  checkScroll();
+});
