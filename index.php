@@ -24,35 +24,38 @@ header("Expires: 0");
 </head>
 
 <body>
-
-    <div class="topbar">
-        <div class="search-wrapper">
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Search anything...">
-                <button class="search-btn">
-                    <i data-feather="search"></i>
-                </button>
+    <div class="landing1">
+        <div class="topbar">
+            <div class="search-wrapper">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search anything...">
+                    <button class="search-btn">
+                        <i data-feather="search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="title">
+                <span class="span-text">Game News</span>
             </div>
         </div>
-        <div class="title">
-            <span class="span-text">Game News</span>
+        <div class="sidebar">
+            <div class="menu-icon">
+                <i data-feather="menu"></i>
+            </div>
+            <ul class="nav">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="php/logout.php">Logout</a></li>
+            </ul>
+        </div>
+        <div class="content">
         </div>
     </div>
-    <div class="sidebar">
-        <div class="menu-icon">
-            <i data-feather="menu"></i>
-        </div>
-        <ul class="nav">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="help.html">Help</a></li>
-            <li><a href="php/logout.php">Logout</a></li>
-        </ul>
-    </div>
-    <div class="content">
-    </div>
+    <div class="landing2">
 
+    </div>
     <script>
     feather.replace();
 
