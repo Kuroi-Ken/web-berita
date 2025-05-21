@@ -9,11 +9,12 @@ $password = $_POST['password'] ?? '';
 
 if ($username === $valid_user && $password === $valid_pass) {
     $_SESSION['username'] = $username;
-    header("Location: index.php");
+    header("Location: ../index.php"); 
     exit();
 } else {
     echo "<script>
       alert('Login gagal. Username atau password salah!');
-      window.location.href = '../login.php';
+      window.location.href = '../login.php'; // Asumsi login.php ada di root relatif terhadap direktori php
     </script>";
 }
+?>
