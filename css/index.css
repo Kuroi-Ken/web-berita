@@ -18,12 +18,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 40px;
-  z-index: 999;
+  padding: 20px 40px;
+  z-index: 3;
   position: fixed;
   left: 0;
   right: 0;
-  background: #2a2a2a;
 }
 
 .search-wrapper {
@@ -188,7 +187,6 @@ body {
   width: 200%;
   height: 100%;
   transition: transform 1s ease;
-  z-index: 1;
 }
 
 .slide {
