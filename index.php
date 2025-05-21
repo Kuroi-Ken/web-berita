@@ -2,13 +2,13 @@
 session_start();
 
 if (!isset($_SESSION['username'])) {
-    header("Location: php/login.php"); 
+    header("Location: php/login.php");
     exit();
 }
 
-header("Cache-Control: no-cache, no-store, must-revalidate"); 
-header("Pragma: no-cache"); 
-header("Expires: 0"); 
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +19,7 @@ header("Expires: 0");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="js.index.js">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
@@ -38,8 +39,8 @@ header("Expires: 0");
             </div>
         </div>
 
-        <div class="sidebar">
-            <div class="menu-icon">
+        <div class="sidebar" id="sidebar">
+            <div class="menu-icon" id="menuIcon">
                 <i data-feather="menu"></i>
             </div>
             <ul class="nav">
@@ -65,8 +66,8 @@ header("Expires: 0");
                 </div>
             </div>
             <div class="navigation-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
             </div>
         </div>
     </div>
@@ -75,20 +76,6 @@ header("Expires: 0");
         <br>nvwnvwe
         br
     </div>
-    <script>
-    feather.replace();
-
-    const slides = document.querySelector('.slides');
-    const dots = document.querySelectorAll('.dot');
-
-    let index = 0;
-    setInterval(() => {
-        index = (index + 1) % dots.length;
-        slides.style.transform = `translateX(-${index * 100}%)`;
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[index].classList.add('active');
-    }, 5000);
-    </script>
 </body>
 
 </html>
