@@ -770,16 +770,7 @@ header("Expires: 0");
                             </div>
                         </div>
                     </div>
-                    <div class="mvp-info">
-                        <div class="mvp">
-                            <i
-                                data-feather="award"></i>
-                            <span>MVP: TenZ - 92
-                                kills,
-                                1.48 KD
-                                ratio</span>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
@@ -1175,9 +1166,7 @@ header("Expires: 0");
                                 Duration:</span>
                             <span
                                 class="detail-value">43:21
-                                | 38:07 | 51:45 |
-                                32:18 |
-                                47:52</span>
+                            </span>
                         </div>
                         <div class="detail-item">
                             <span
@@ -1189,15 +1178,7 @@ header("Expires: 0");
                                 (65)</span>
                         </div>
                     </div>
-                    <div class="mvp-info">
-                        <div class="mvp">
-                            <i
-                                data-feather="award"></i>
-                            <span>MVP: Yatoro -
-                                Average
-                                GPM: 756</span>
-                        </div>
-                    </div>
+
                 </div>
 
                 <!-- Upcoming Match Section -->
