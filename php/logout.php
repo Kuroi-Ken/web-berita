@@ -9,5 +9,5 @@ header("Pragma: no-cache");
 header("Expires: 0");
 
 // Redirect ke login
-header("Location: login.php");
+header("Location: ../login.php");
 exit();

@@ -14,6 +14,6 @@ if ($username === $valid_user && $password === $valid_pass) {
 } else {
     echo "<script>
       alert('Login gagal. Username atau password salah!');
-      window.location.href = 'login.php';
+      window.location.href = '../login.php';
     </script>";
 }
