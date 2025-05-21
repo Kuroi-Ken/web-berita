@@ -19,7 +19,7 @@ header("Expires: 0");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="js.index.js">
+    <link rel="stylesheet" href="js/index.js">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
@@ -71,11 +71,63 @@ header("Expires: 0");
             </div>
         </div>
     </div>
+
     <div class="menu2">
-        ewvwbwe
-        <br>nvwnvwe
-        br
+        <div class="section recommended">
+            <h2>Recommended For You</h2>
+            <div class="recommended-slider">
+                <div class="recommended-card active">
+                    <div class="card-content">
+                        <div class="text-block">
+                            <h3>LOREM IPSUM</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor est. Cras tempus
+                                dignissim mi eget aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et
+                                ultrices posuere cubilia curae;</p>
+                        </div>
+                        <div class="image-block">
+                            <img src="images/football.png" alt="Football" />
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder slides for carousel dots -->
+                <div class="recommended-card"></div>
+                <div class="recommended-card"></div>
+            </div>
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <div class="section latest-news">
+            <h2>Latest News</h2>
+
+            <div class="news-card">
+                <img src="images/football.png" alt="Football">
+                <div class="news-text">
+                    <h3>LOREM IPSUM</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor est. Cras tempus
+                        dignissim mi eget aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                        posuere cubilia curae;</p>
+                    <span class="time">4 Hours Ago</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <img src="images/football.png" alt="Football">
+                <div class="news-text">
+                    <h3>LOREM IPSUM</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor est. Cras tempus
+                        dignissim mi eget aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                        posuere cubilia curae;</p>
+                    <span class="time">4 Hours Ago</span>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script src="js/index.js"></script>
 </body>
 
 </html>
