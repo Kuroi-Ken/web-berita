@@ -1,10 +1,18 @@
 body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  overflow-y: auto; /* Memastikan scroll berfungsi */
+}
+
+/* Menu 1 Section - Header and Slider */
+.menu1 {
+  position: relative;
+  width: 100%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Segoe UI', sans-serif;
+  background-color: #1f1f1f;
+  /* Hapus overflow: hidden agar bisa scroll ke menu2 */
 }
 
 .topbar {
@@ -26,7 +34,7 @@ body {
 .search-container {
   display: flex;
   align-items: center;
-  background: #2A2A2A;
+  background: #2a2a2a;
   padding: 5px 10px;
   border-radius: 60px;
   outline: solid white 1px;
@@ -75,107 +83,108 @@ body {
 }
 
 .sidebar {
-    position: fixed;
-    padding: 15px 20px;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 100vh;
-    background-color: transparent; 
-    overflow: hidden;
-    transition: width 600ms ease, background-color 600ms ease;
-    z-index: 1000;
+  position: fixed;
+  padding: 15px 20px;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100vh;
+  background-color: transparent;
+  overflow: hidden;
+  transition: width 600ms ease, background-color 600ms ease;
+  z-index: 1000;
 }
 
 .sidebar:hover {
-    width: 200px;
-    background-color: #333; 
+  width: 200px;
+  background-color: #333;
 }
 
 .menu-icon {
-    color: #fff;
-    font-size: 24px;
-    text-align: center;
-    padding: 20px 0;
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
-    transition: opacity 600ms ease;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px 0;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  transition: opacity 600ms ease;
 }
 
 .sidebar:hover .menu-icon {
-    opacity: 0;
+  opacity: 0;
 }
 
-.nav li .game{
-    gap: 10px;
-    align-items: center;
-    display: flex;
+.nav li .game {
+  gap: 10px;
+  align-items: center;
+  display: flex;
 }
 
-.nav li a .arrow{
-    transition: transform 300ms ease;
-    margin-top: 5px;
+.nav li a .arrow {
+  transition: transform 300ms ease;
+  margin-top: 5px;
 }
 
 .sidebar:hover .menu-icon {
-    opacity: 0;
+  opacity: 0;
 }
 
-.sidebar li:hover >  a .arrow{
-    transform: rotate(90deg);
+.sidebar li:hover > a .arrow {
+  transform: rotate(90deg);
 }
 
 .nav {
-    list-style: none;
-    padding: 20px 0;
-    position: fixed;
+  list-style: none;
+  padding: 20px 0;
+  position: fixed;
 }
 
 .nav li {
-    padding: 15px 0;
+  padding: 15px 0;
 }
 
 .nav li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 25px;
-    padding-left: 20px;
-    display: block;
-    opacity: 0;
-    transition: opacity 600ms ease, transform 600ms ease;
-    transform: translateX(-10px);
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+  padding-left: 20px;
+  display: block;
+  opacity: 0;
+  transition: opacity 600ms ease, transform 600ms ease;
+  transform: translateX(-10px);
 }
 
 .sidebar:hover .nav li a {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .home {
-    list-style: none;
-    padding-left: 20px;
-    opacity: 0; 
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 1000ms ease, max-height 1000ms ease;
+  list-style: none;
+  padding-left: 20px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 1000ms ease, max-height 1000ms ease;
 }
 
 .nav li:hover .home {
-    opacity: 1;
-    max-height: 300px; 
+  opacity: 1;
+  max-height: 300px;
 }
 
 .head-contain {
-    margin-left: 60px;
-    padding: 20px;
+  margin-left: 60px;
+  padding: 20px;
 }
 
+/* Slider Section */
 .slider {
   width: 100%;
-  overflow: hidden;
-  position: relative;
   height: 100vh;
+  overflow: hidden; /* Ini tetap hidden untuk slider saja */
+  position: relative;
 }
 
 .slides {
@@ -186,18 +195,19 @@ body {
 }
 
 .slide {
-  flex: 1 0 100%;
-  padding: 100px 60px;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 60px;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  box-sizing: border-box;
 }
 
 .slide1 {
-  background: #2A2A2A;
+  background: #2a2a2a;
 }
 
 .slide2 {
@@ -234,136 +244,141 @@ body {
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
+  z-index: 10;
 }
 
-.dot {
+.navigation-dots .dot {
   width: 12px;
   height: 12px;
   background: #777;
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.dot.active {
+.navigation-dots .dot.active {
   background: #000;
 }
 
+/* Menu 2 Section - Content */
 .menu2 {
-    padding: 60px 40px;
-    background-color: white;
-    font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  z-index: 1;
+  padding: 60px 40px;
+  background-color: white;
+  font-family: "Segoe UI", sans-serif;
+  border-top: 1px solid #ddd; /* Visual separation */
 }
 
 .section h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
-    font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .recommended-slider {
-    display: flex;
-    gap: 20px;
-    overflow: hidden;
-    margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .recommended-card {
-    flex: 1;
-    background: #333;
-    border-radius: 20px;
-    color: white;
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    opacity: 0.4;
-    transition: 0.3s;
+  flex: 1;
+  background: #333;
+  border-radius: 20px;
+  color: white;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  opacity: 0.4;
+  transition: 0.3s;
 }
 
 .recommended-card.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 .card-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
 }
 
 .card-content .text-block {
-    flex: 2;
+  flex: 2;
 }
 
 .card-content h3 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .card-content p {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .card-content .image-block {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
 }
 
 .dots .dot {
-    width: 10px;
-    height: 10px;
-    background: #aaa;
-    border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background: #aaa;
+  border-radius: 50%;
 }
 
 .dots .dot.active {
-    background: #000;
+  background: #000;
 }
 
 .latest-news .news-card {
-    display: flex;
-    align-items: flex-start;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    gap: 20px;
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  gap: 20px;
 }
 
 .news-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .news-text h3 {
-    font-size: 20px;
-    margin: 0 0 10px 0;
+  font-size: 20px;
+  margin: 0 0 10px 0;
 }
 
 .news-text p {
-    font-size: 14px;
-    margin-bottom: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
 .news-text .time {
-    font-size: 12px;
-    color: gray;
+  font-size: 12px;
+  color: gray;
 }
-
