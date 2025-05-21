@@ -86,113 +86,51 @@ header("Expires: 0");
                     data-slide="1"></span>
             </div>
         </div>
+    </div>
 
-        <div class="menu2">
-            <div class="section recommended">
-                <h2>Recommended For You</h2>
-                <div class="recommended-slider">
-                    <div
-                        class="recommended-card active">
-                        <div class="card-content">
-                            <div
-                                class="text-block">
-                                <h3>LOREM IPSUM
-                                </h3>
-                                <p>Lorem ipsum
-                                    dolor
-                                    sit amet,
-                                    consectetur
-                                    adipiscing
-                                    elit.
-                                    Fusce a tortor
-                                    est. Cras
-                                    tempus
-                                    dignissim mi
-                                    eget
-                                    aliquam.
-                                    Vestibulum
-                                    ante
-                                    ipsum primis
-                                    in
-                                    faucibus orci
-                                    luctus et
-                                    ultrices
-                                    posuere
-                                    cubilia curae;
-                                </p>
-                            </div>
-                            <div
-                                class="image-block">
-                                <img src="images/football.png"
-                                    alt="Football" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="recommended-card">
-                    </div>
-                    <div class="recommended-card">
-                    </div>
-                </div>
-                <div class="dots">
-                    <span
-                        class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
+    <div class="menu2">
+        <!-- Category tabs -->
+        <div class="category-tabs">
+            <div class="tab active"
+                data-category="news">News</div>
+            <div class="tab"
+                data-category="update">Update
             </div>
+            <div class="tab"
+                data-category="tournament">
+                Tournament Score</div>
+            <div class="tab-indicator"></div>
+        </div>
 
-            <div class="section latest-news">
-                <h2>Latest News</h2>
-                <div class="news-card">
-                    <img src="images/football.png"
-                        alt="Football">
-                    <div class="news-text">
-                        <h3>LOREM IPSUM</h3>
-                        <p>Lorem ipsum dolor sit
-                            amet,
-                            consectetur adipiscing
-                            elit. Fusce a tortor
-                            est.
-                            Cras tempus
-                            dignissim mi eget
-                            aliquam.
-                            Vestibulum ante ipsum
-                            primis in faucibus
-                            orci
-                            luctus et ultrices
-                            posuere cubilia curae;
-                        </p>
-                        <span class="time">4 Hours
-                            Ago</span>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <img src="images/football.png"
-                        alt="Football">
-                    <div class="news-text">
-                        <h3>LOREM IPSUM</h3>
-                        <p>Lorem ipsum dolor sit
-                            amet,
-                            consectetur adipiscing
-                            elit. Fusce a tortor
-                            est.
-                            Cras tempus
-                            dignissim mi eget
-                            aliquam.
-                            Vestibulum ante ipsum
-                            primis in faucibus
-                            orci
-                            luctus et ultrices
-                            posuere cubilia curae;
-                        </p>
-                        <span class="time">4 Hours
-                            Ago</span>
-                    </div>
-                </div>
+        <!-- News Category Content -->
+        <div
+            class="category-content news-content active">
+            <h2>Latest News</h2>
+            <div class="news-container">
+                <!-- News cards will be dynamically inserted here -->
             </div>
         </div>
 
-        <script src="js/index.js"></script>
+        <!-- Update Category Content -->
+        <div
+            class="category-content update-content">
+            <h2>Recent Updates</h2>
+            <div class="update-container">
+                <!-- Update cards will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Tournament Score Category Content -->
+        <div
+            class="category-content tournament-content">
+            <h2>Tournament Scores</h2>
+            <div class="tournament-container">
+                <!-- Tournament score cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
 </body>
 
 </html>
