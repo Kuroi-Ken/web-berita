@@ -392,7 +392,6 @@ header("Expires: 0");
                         matches.</p>
                     <div class="video-preview">
                         <div class="video-thumbnail">
-                            <img src="images/champions-video.jpg" alt="Partnership Announcement">
                             <div class="play-button">
                                 <i data-feather="play"></i>
                             </div>

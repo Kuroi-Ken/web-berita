@@ -1,5 +1,16 @@
 .tournament-standings {
   margin-bottom: 40px;
+  margin: 30px;
+}
+
+/* In css/tourscore.css */
+/* Hide all images within tournament-score-content */
+#tournament-score-content .esports-logo img,
+#tournament-score-content .team-logo-small,
+#tournament-score-content .team-logo,
+#tournament-score-content .hero-icon,
+#tournament-score-content .upcoming-game img {
+  display: none;
 }
 
 .tournament-standings h2,
