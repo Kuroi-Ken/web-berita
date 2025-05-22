@@ -141,4 +141,69 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Check initial position (in case page is loaded scrolled down)
   checkScroll();
+
+  // Search button functionality (scroll and highlight)
+  const searchBtn = document.querySelector(".search-btn");
+  const searchInput = document.querySelector(".search-input");
+  const latestNewsSection = document.querySelector("#news-content .latest-news"); // Target latest news within news tab
+  const newsCards = latestNewsSection ? latestNewsSection.querySelectorAll(".news-card") : [];
+
+  // Function to clear existing highlights
+  function clearHighlights(element) {
+    if (element) {
+      element.innerHTML = element.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/g, "$1");
+    }
+  }
+
+  // Function to highlight text
+  function highlightText(element, searchTerm) {
+    if (element && searchTerm) {
+      const originalText = element.textContent;
+      // Escape special characters in regex
+      const escapedSearchTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const regex = new RegExp(`(${escapedSearchTerm})`, "gi");
+      element.innerHTML = originalText.replace(regex, '<span class="highlight">$1</span>');
+    }
+  }
+
+  // Event listener for search button click (existing functionality)
+  searchBtn.addEventListener("click", () => {
+    const searchTerm = searchInput.value.trim();
+
+    // Scroll to menu2
+    if (menu2) {
+      menu2.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Highlight search terms in Latest News
+    newsCards.forEach((card) => {
+      const newsTitle = card.querySelector("h3");
+      const newsParagraph = card.querySelector("p");
+
+      // Clear previous highlights
+      clearHighlights(newsTitle);
+      clearHighlights(newsParagraph);
+
+      // Apply new highlights if search term is not empty
+      if (searchTerm) {
+        highlightText(newsTitle, searchTerm);
+        highlightText(newsParagraph, searchTerm);
+      }
+    });
+  });
+
+  // Event listener to scroll to menu2 when user starts typing in search input
+  searchInput.addEventListener("input", function() {
+    if (menu2) {
+      menu2.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
+  // Optional: Allow pressing Enter in search input to trigger search
+  searchInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent default form submission if it's part of a form
+      searchBtn.click(); // Programmatically click the search button
+    }
+  });
 });

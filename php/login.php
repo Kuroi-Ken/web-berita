@@ -37,12 +37,11 @@ if (isset($_SESSION['username'])) {
 
             <div class="divider">or continue with</div>
             <div class="social-login">
-                <button class="social"><i data-feather="github"></i></button>
-                <button class="social"><i data-feather="apple"></i></button>
+                <button class="social"><i data-feather="chrome"></i></button>
                 <button class="social"><i data-feather="facebook"></i></button>
             </div>
 
-            <p class="register">Not a member? <a href="#">Register now</a></p>
+            <p class="register">Not a member? <a href="register.php">Register now</a></p>
         </div>
 
         <div class="side-image">

@@ -211,31 +211,53 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  position: relative; /* Tambahkan ini */
+  z-index: 0; /* Pastikan slide di bawah overlay lain jika ada */
 }
 
 .slide1 {
-  background: #2a2a2a;
+  background: url('../assets/championship.png') no-repeat center center/cover;
 }
 
 .slide2 {
-  background: #1f1f1f;
+  background: url('../assets/champion2.png') no-repeat center center/cover;
+}
+
+.slide1::after,
+.slide2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Warna hitam dengan opasitas 75% */
+  z-index: 1; /* Pastikan overlay di atas gambar, tetapi di bawah konten teks */
+}
+
+.slide h1,
+.slide p,
+.explore {
+  position: relative; /* Penting untuk z-index bekerja */
+  z-index: 2; /* Pastikan ini lebih tinggi dari z-index overlay (1) */
 }
 
 .slide h1 {
   font-size: 70px;
-  margin: 0;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 10px 20px;
+  margin: 0 ;
+  margin-top: 250px;
+  padding: 10px 5px;
   border-radius: 10px;
 }
 
 .slide p {
   font-size: 22px;
   margin: 20px 0;
+  margin-top: 10px;
 }
 
 .explore {
-  background-color: #777;
+  background-color: #333;
   border: none;
   color: white;
   padding: 15px 30px;
