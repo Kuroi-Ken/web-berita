@@ -216,16 +216,16 @@ body {
 }
 
 .slide1 {
-  background: url('../assets/championship.png') no-repeat center center/cover;
+  background: url("../assets/championship.png") no-repeat center center/cover;
 }
 
 .slide2 {
-  background: url('../assets/champion2.png') no-repeat center center/cover;
+  background: url("../assets/champion2.png") no-repeat center center/cover;
 }
 
 .slide1::after,
 .slide2::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -244,7 +244,7 @@ body {
 
 .slide h1 {
   font-size: 70px;
-  margin: 0 ;
+  margin: 0;
   margin-top: 250px;
   padding: 10px 5px;
   border-radius: 10px;
@@ -477,4 +477,11 @@ body {
 .news-text .time {
   font-size: 12px;
   color: #777;
+}
+
+#news-content img,
+#news-content .image-block img,
+#news-content .news-card img,
+#news-content .recommended-card img {
+  display: none;
 }

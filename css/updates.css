@@ -61,17 +61,11 @@
 }
 
 /* ===== UPDATE IMAGES ===== */
-.update-image {
-  margin-bottom: 15px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.update-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+#update-content img,
+#update-content .update-image img,
+#update-content .video-thumbnail img,
+#update-content .app-feature img {
+  display: none;
 }
 
 /* ===== UPDATE TEXT CONTENT ===== */
