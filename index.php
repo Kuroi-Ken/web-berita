@@ -29,12 +29,10 @@ header("Expires: 0");
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet"
-        href="css/tourscore.css">
+    <link rel="stylesheet" href="css/tourscore.css">
     <link rel="stylesheet" href="css/updates.css">
     <script src="https://unpkg.com/feather-icons">
     </script>
@@ -45,12 +43,9 @@ header("Expires: 0");
         <div class="topbar">
             <div class="search-wrapper">
                 <div class="search-container">
-                    <input type="text"
-                        class="search-input"
-                        placeholder="Search anything...">
+                    <input type="text" class="search-input" placeholder="Search anything...">
                     <button class="search-btn">
-                        <i
-                            data-feather="search"></i>
+                        <i data-feather="search"></i>
                     </button>
                 </div>
             </div>
@@ -68,12 +63,11 @@ header("Expires: 0");
                         (<?php echo htmlspecialchars($_SESSION['username']); ?>)</a>
                 </li>
                 <li><a href="#">Home</a></li>
-                <li><a href="about.html">About</a>
+                <li><a href="php/about.php">About</a>
                 </li>
                 <li><a href="help.html">Help</a>
                 </li>
-                <li><a
-                        href="php/logout.php">Logout</a>
+                <li><a href="php/logout.php">Logout</a>
                 </li>
             </ul>
         </div>
@@ -85,8 +79,7 @@ header("Expires: 0");
                         Berhasil Memenangkan
                         Kejuaraan League of
                         Legends World Champion</p>
-                    <button
-                        class="explore">EXPLORE
+                    <button class="explore">EXPLORE
                         MORE</button>
                 </div>
                 <div class="slide slide2">
@@ -95,16 +88,13 @@ header("Expires: 0");
                         Trace Esports Melaju ke
                         Babak Playoff, Kalahkan
                         Juara VCT America!</p>
-                    <button
-                        class="explore">EXPLORE
+                    <button class="explore">EXPLORE
                         MORE</button>
                 </div>
             </div>
             <div class="navigation-dots">
-                <span class="dot active"
-                    data-slide="0"></span>
-                <span class="dot"
-                    data-slide="1"></span>
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
             </div>
         </div>
     </div>
@@ -112,42 +102,35 @@ header("Expires: 0");
     <div class="menu2">
         <!-- Tab Navigation -->
         <div class="tab-navigation">
-            <div class="tab active"
-                data-tab="news">News</div>
+            <div class="tab active" data-tab="news">News</div>
             <div class="tab" data-tab="update">
                 Update</div>
-            <div class="tab"
-                data-tab="tournament-score">
+            <div class="tab" data-tab="tournament-score">
                 Tournament Score</div>
         </div>
 
         <!-- News Tab Content -->
-        <div class="tab-content"
-            id="news-content">
+        <div class="tab-content" id="news-content">
             <!-- Recommended For You section - Updated with Database -->
             <div class="section recommended">
                 <h2>Recommended For You</h2>
                 <div class="recommended-slider">
                     <?php if (!empty($recommendedNews)): ?>
                     <?php foreach ($recommendedNews as $index => $news): ?>
-                    <div
-                        class="recommended-card <?php echo $index === 0 ? 'active' : ''; ?>">
+                    <div class="recommended-card <?php echo $index === 0 ? 'active' : ''; ?>">
                         <div class="card-content">
-                            <div
-                                class="text-block">
+                            <div class="text-block">
                                 <h3><?php echo htmlspecialchars(strtoupper($news['title'])); ?>
                                 </h3>
                                 <p><?php echo htmlspecialchars($news['excerpt']); ?>
                                 </p>
-                                <small
-                                    style="color: #ccc; font-size: 12px;">
+                                <small style="color: #ccc; font-size: 12px;">
                                     <?php echo $news['category_name']; ?>
                                     •
                                     <?php echo date('M j, Y', strtotime($news['published_at'])); ?>
                                 </small>
                             </div>
-                            <div
-                                class="image-block">
+                            <div class="image-block">
                                 <!-- Image placeholder since images are hidden by CSS -->
                             </div>
                         </div>
@@ -155,11 +138,9 @@ header("Expires: 0");
                     <?php endforeach; ?>
                     <?php else: ?>
                     <!-- Fallback jika tidak ada data -->
-                    <div
-                        class="recommended-card active">
+                    <div class="recommended-card active">
                         <div class="card-content">
-                            <div
-                                class="text-block">
+                            <div class="text-block">
                                 <h3>WELCOME TO
                                     GAME NEWS</h3>
                                 <p>Stay updated
@@ -176,22 +157,19 @@ header("Expires: 0");
                                     your favorite
                                     games and
                                     teams.</p>
-                                <small
-                                    style="color: #ccc; font-size: 12px;">
+                                <small style="color: #ccc; font-size: 12px;">
                                     General •
                                     Today
                                 </small>
                             </div>
-                            <div
-                                class="image-block">
+                            <div class="image-block">
                                 <!-- Image placeholder -->
                             </div>
                         </div>
                     </div>
                     <div class="recommended-card">
                         <div class="card-content">
-                            <div
-                                class="text-block">
+                            <div class="text-block">
                                 <h3>TOURNAMENT
                                     UPDATES</h3>
                                 <p>Follow live
@@ -204,22 +182,19 @@ header("Expires: 0");
                                     competitive
                                     gaming and
                                     esports.</p>
-                                <small
-                                    style="color: #ccc; font-size: 12px;">
+                                <small style="color: #ccc; font-size: 12px;">
                                     Esports •
                                     Today
                                 </small>
                             </div>
-                            <div
-                                class="image-block">
+                            <div class="image-block">
                                 <!-- Image placeholder -->
                             </div>
                         </div>
                     </div>
                     <div class="recommended-card">
                         <div class="card-content">
-                            <div
-                                class="text-block">
+                            <div class="text-block">
                                 <h3>GAME REVIEWS
                                 </h3>
                                 <p>Discover
@@ -233,14 +208,12 @@ header("Expires: 0");
                                     about your
                                     next gaming
                                     adventure.</p>
-                                <small
-                                    style="color: #ccc; font-size: 12px;">
+                                <small style="color: #ccc; font-size: 12px;">
                                     Reviews •
                                     Today
                                 </small>
                             </div>
-                            <div
-                                class="image-block">
+                            <div class="image-block">
                                 <!-- Image placeholder -->
                             </div>
                         </div>
@@ -252,8 +225,7 @@ header("Expires: 0");
                     $totalCards = !empty($recommendedNews) ? count($recommendedNews) : 3;
                     for ($i = 0; $i < $totalCards; $i++):
                     ?>
-                    <span
-                        class="dot <?php echo $i === 0 ? 'active' : ''; ?>"></span>
+                    <span class="dot <?php echo $i === 0 ? 'active' : ''; ?>"></span>
                     <?php endfor; ?>
                 </div>
             </div>
@@ -288,8 +260,7 @@ header("Expires: 0");
                                     }
                                     ?>
                         </span>
-                        <small
-                            style="color: #888; margin-left: 10px;">
+                        <small style="color: #888; margin-left: 10px;">
                             <?php echo $news['category_name']; ?>
                             •
                             <?php echo $news['views']; ?>
@@ -315,8 +286,7 @@ header("Expires: 0");
                             esports.</p>
                         <span class="time">Just
                             Now</span>
-                        <small
-                            style="color: #888; margin-left: 10px;">General
+                        <small style="color: #888; margin-left: 10px;">General
                             • 0 views</small>
                     </div>
                 </div>
@@ -334,8 +304,7 @@ header("Expires: 0");
                             play.</p>
                         <span class="time">1 Hour
                             Ago</span>
-                        <small
-                            style="color: #888; margin-left: 10px;">Valorant
+                        <small style="color: #888; margin-left: 10px;">Valorant
                             • 0 views</small>
                     </div>
                 </div>
@@ -353,8 +322,7 @@ header("Expires: 0");
                             esports.</p>
                         <span class="time">2 Hours
                             Ago</span>
-                        <small
-                            style="color: #888; margin-left: 10px;">Mobile
+                        <small style="color: #888; margin-left: 10px;">Mobile
                             Legends • 0
                             views</small>
                     </div>
@@ -391,9 +359,7 @@ header("Expires: 0");
         ?>
 
         <!-- Update Tab Content -->
-        <div class="tab-content"
-            id="update-content"
-            style="display: none;">
+        <div class="tab-content" id="update-content" style="display: none;">
             <!-- Game Updates Section -->
             <div class="section updates">
                 <h2>Game Updates</h2>
@@ -417,29 +383,24 @@ header("Expires: 0");
                         </p>
 
                         <?php if (!empty($update['version'])): ?>
-                        <div
-                            class="update-features">
+                        <div class="update-features">
                             <div class="feature">
-                                <i
-                                    data-feather="tag"></i>
+                                <i data-feather="tag"></i>
                                 <span>Version
                                     <?php echo htmlspecialchars($update['version']); ?></span>
                             </div>
                             <div class="feature">
-                                <i
-                                    data-feather="calendar"></i>
+                                <i data-feather="calendar"></i>
                                 <span><?php echo htmlspecialchars($update['game_name']); ?></span>
                             </div>
                             <div class="feature">
-                                <i
-                                    data-feather="clock"></i>
+                                <i data-feather="clock"></i>
                                 <span><?php echo date('M j', strtotime($update['release_date'])); ?></span>
                             </div>
                         </div>
                         <?php endif; ?>
 
-                        <button
-                            class="read-more-btn">Read
+                        <button class="read-more-btn">Read
                             Full Article</button>
                     </div>
                 </div>
@@ -474,29 +435,24 @@ header("Expires: 0");
                             negotiations and
                             player development
                             systems.</p>
-                        <div
-                            class="update-features">
+                        <div class="update-features">
                             <div class="feature">
-                                <i
-                                    data-feather="cpu"></i>
+                                <i data-feather="cpu"></i>
                                 <span>Advanced
                                     AI</span>
                             </div>
                             <div class="feature">
-                                <i
-                                    data-feather="users"></i>
+                                <i data-feather="users"></i>
                                 <span>Team
                                     Chemistry</span>
                             </div>
                             <div class="feature">
-                                <i
-                                    data-feather="trending-up"></i>
+                                <i data-feather="trending-up"></i>
                                 <span>Career
                                     Evolution</span>
                             </div>
                         </div>
-                        <button
-                            class="read-more-btn">Read
+                        <button class="read-more-btn">Read
                             Full Article</button>
                     </div>
                 </div>
@@ -526,29 +482,24 @@ header("Expires: 0");
                             rights to several
                             major European clubs.
                         </p>
-                        <div
-                            class="update-features">
+                        <div class="update-features">
                             <div class="feature">
-                                <i
-                                    data-feather="droplet"></i>
+                                <i data-feather="droplet"></i>
                                 <span>Realistic
                                     Physics</span>
                             </div>
                             <div class="feature">
-                                <i
-                                    data-feather="shuffle"></i>
+                                <i data-feather="shuffle"></i>
                                 <span>Tactical
                                     Options</span>
                             </div>
                             <div class="feature">
-                                <i
-                                    data-feather="shield"></i>
+                                <i data-feather="shield"></i>
                                 <span>Official
                                     Licenses</span>
                             </div>
                         </div>
-                        <button
-                            class="read-more-btn">Read
+                        <button class="read-more-btn">Read
                             Full Article</button>
                     </div>
                 </div>
@@ -592,8 +543,7 @@ header("Expires: 0");
                             <cite>—
                                 <?php echo htmlspecialchars($news['author_name'] ?? 'Game News Team'); ?></cite>
                         </div>
-                        <button
-                            class="read-more-btn">Read
+                        <button class="read-more-btn">Read
                             Full Article</button>
                     </div>
                 </div>
@@ -628,28 +578,21 @@ header("Expires: 0");
                             events tied to real
                             Champions League
                             matches.</p>
-                        <div
-                            class="video-preview">
-                            <div
-                                class="video-thumbnail">
-                                <div
-                                    class="play-button">
-                                    <i
-                                        data-feather="play"></i>
+                        <div class="video-preview">
+                            <div class="video-thumbnail">
+                                <div class="play-button">
+                                    <i data-feather="play"></i>
                                 </div>
                             </div>
-                            <div
-                                class="video-info">
-                                <div
-                                    class="video-title">
+                            <div class="video-info">
+                                <div class="video-title">
                                     EA Sports x
                                     Champions
                                     League -
                                     Official
                                     Partnership
                                 </div>
-                                <div
-                                    class="video-duration">
+                                <div class="video-duration">
                                     4:25</div>
                             </div>
                         </div>
@@ -682,15 +625,11 @@ header("Expires: 0");
                             seamless video
                             playback.</p>
                         <div class="app-features">
-                            <div
-                                class="app-feature">
-                                <div
-                                    class="feature-icon">
-                                    <i
-                                        data-feather="bell"></i>
+                            <div class="app-feature">
+                                <div class="feature-icon">
+                                    <i data-feather="bell"></i>
                                 </div>
-                                <div
-                                    class="feature-details">
+                                <div class="feature-details">
                                     <h4>Customizable
                                         Alerts
                                     </h4>
@@ -704,15 +643,11 @@ header("Expires: 0");
                                         about.</p>
                                 </div>
                             </div>
-                            <div
-                                class="app-feature">
-                                <div
-                                    class="feature-icon">
-                                    <i
-                                        data-feather="video"></i>
+                            <div class="app-feature">
+                                <div class="feature-icon">
+                                    <i data-feather="video"></i>
                                 </div>
-                                <div
-                                    class="feature-details">
+                                <div class="feature-details">
                                     <h4>Match
                                         Highlights
                                     </h4>
@@ -726,15 +661,11 @@ header("Expires: 0");
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                class="app-feature">
-                                <div
-                                    class="feature-icon">
-                                    <i
-                                        data-feather="share-2"></i>
+                            <div class="app-feature">
+                                <div class="feature-icon">
+                                    <i data-feather="share-2"></i>
                                 </div>
-                                <div
-                                    class="feature-details">
+                                <div class="feature-details">
                                     <h4>Social
                                         Integration
                                     </h4>
@@ -756,13 +687,10 @@ header("Expires: 0");
         </div>
 
         <!-- Tournament Score Tab Content -->
-        <div class="tab-content"
-            id="tournament-score-content"
-            style="display: none;">
+        <div class="tab-content" id="tournament-score-content" style="display: none;">
             <!-- Valorant Tournament Section -->
             <?php if (!empty($valorantStandings)): ?>
-            <div
-                class="section tournament-standings valorant-section">
+            <div class="section tournament-standings valorant-section">
                 <h2>Valorant Champions Tour 2025
                 </h2>
                 <div class="esports-header">
@@ -770,12 +698,10 @@ header("Expires: 0");
                         <!-- Logo hidden by CSS -->
                     </div>
                     <div class="tournament-info">
-                        <div
-                            class="tournament-title">
+                        <div class="tournament-title">
                             <?php echo htmlspecialchars($valorantStandings[0]['tournament_name']); ?>
                         </div>
-                        <div
-                            class="tournament-date">
+                        <div class="tournament-date">
                             May 15-22, 2025</div>
                         <div class="prize-pool">
                             $<?php echo number_format($valorantStandings[0]['prize_pool']); ?>
@@ -831,8 +757,7 @@ header("Expires: 0");
 
             <!-- Mobile Legends Tournament Section -->
             <?php if (!empty($mlStandings)): ?>
-            <div
-                class="section tournament-standings ml-section">
+            <div class="section tournament-standings ml-section">
                 <h2>Mobile Legends: Bang Bang
                     World Championship</h2>
                 <div class="esports-header">
@@ -840,12 +765,10 @@ header("Expires: 0");
                         <!-- Logo hidden by CSS -->
                     </div>
                     <div class="tournament-info">
-                        <div
-                            class="tournament-title">
+                        <div class="tournament-title">
                             <?php echo htmlspecialchars($mlStandings[0]['tournament_name']); ?>
                         </div>
-                        <div
-                            class="tournament-date">
+                        <div class="tournament-date">
                             May 10-18, 2025</div>
                         <div class="prize-pool">
                             $<?php echo number_format($mlStandings[0]['prize_pool']); ?>
@@ -901,8 +824,7 @@ header("Expires: 0");
 
             <!-- Dota 2 Tournament Section -->
             <?php if (!empty($dotaStandings)): ?>
-            <div
-                class="section tournament-standings dota-section">
+            <div class="section tournament-standings dota-section">
                 <h2>Dota 2 The International 2025
                 </h2>
                 <div class="esports-header">
@@ -910,12 +832,10 @@ header("Expires: 0");
                         <!-- Logo hidden by CSS -->
                     </div>
                     <div class="tournament-info">
-                        <div
-                            class="tournament-title">
+                        <div class="tournament-title">
                             <?php echo htmlspecialchars($dotaStandings[0]['tournament_name']); ?>
                         </div>
-                        <div
-                            class="tournament-date">
+                        <div class="tournament-date">
                             May 1-12, 2025</div>
                         <div class="prize-pool">
                             $<?php echo number_format($dotaStandings[0]['prize_pool']); ?>
@@ -977,37 +897,27 @@ header("Expires: 0");
                 <div
                     class="result-card <?php echo ($match['tournament_type'] == 'valorant') ? 'featured-match' : ''; ?>">
                     <div class="match-info">
-                        <span
-                            class="tournament-name"><?php echo htmlspecialchars($match['tournament_name']); ?></span>
-                        <span
-                            class="match-date"><?php echo date('M j, Y', strtotime($match['match_date'])); ?></span>
+                        <span class="tournament-name"><?php echo htmlspecialchars($match['tournament_name']); ?></span>
+                        <span class="match-date"><?php echo date('M j, Y', strtotime($match['match_date'])); ?></span>
                     </div>
                     <div class="match-result">
-                        <div
-                            class="team home-team">
-                            <span
-                                class="team-name"><?php echo htmlspecialchars($match['home_team_name']); ?></span>
+                        <div class="team home-team">
+                            <span class="team-name"><?php echo htmlspecialchars($match['home_team_name']); ?></span>
                         </div>
                         <div class="score">
-                            <span
-                                class="home-score"><?php echo $match['home_score']; ?></span>
-                            <span
-                                class="score-divider">:</span>
-                            <span
-                                class="away-score"><?php echo $match['away_score']; ?></span>
+                            <span class="home-score"><?php echo $match['home_score']; ?></span>
+                            <span class="score-divider">:</span>
+                            <span class="away-score"><?php echo $match['away_score']; ?></span>
                         </div>
-                        <div
-                            class="team away-team">
-                            <span
-                                class="team-name"><?php echo htmlspecialchars($match['away_team_name']); ?></span>
+                        <div class="team away-team">
+                            <span class="team-name"><?php echo htmlspecialchars($match['away_team_name']); ?></span>
                         </div>
                     </div>
 
                     <?php if ($match['tournament_type'] == 'valorant' && $match['home_score'] > $match['away_score']): ?>
                     <div class="mvp-info">
                         <div class="mvp">
-                            <i
-                                data-feather="award"></i>
+                            <i data-feather="award"></i>
                             <span>Match Winner:
                                 <?php echo htmlspecialchars($match['home_team_name']); ?></span>
                         </div>
@@ -1015,8 +925,7 @@ header("Expires: 0");
                     <?php elseif ($match['tournament_type'] == 'valorant'): ?>
                     <div class="mvp-info">
                         <div class="mvp">
-                            <i
-                                data-feather="award"></i>
+                            <i data-feather="award"></i>
                             <span>Match Winner:
                                 <?php echo htmlspecialchars($match['away_team_name']); ?></span>
                         </div>
@@ -1035,36 +944,30 @@ header("Expires: 0");
                 <?php foreach ($upcomingMatches as $match): ?>
                 <div class="upcoming-match">
                     <div class="upcoming-header">
-                        <div
-                            class="upcoming-game">
+                        <div class="upcoming-game">
                             <span><?php echo htmlspecialchars($match['tournament_name']); ?></span>
-                            <span
-                                class="game-badge <?php echo $match['tournament_type']; ?>-badge">
+                            <span class="game-badge <?php echo $match['tournament_type']; ?>-badge">
                                 <?php echo strtoupper(str_replace('_', ' ', $match['tournament_type'])); ?>
                             </span>
                         </div>
-                        <div
-                            class="upcoming-date">
+                        <div class="upcoming-date">
                             <?php echo date('M j, Y • H:i', strtotime($match['match_date'])); ?>
                             GMT
                         </div>
                     </div>
                     <div class="upcoming-teams">
-                        <div
-                            class="upcoming-team">
+                        <div class="upcoming-team">
                             <span><?php echo htmlspecialchars($match['home_team_name']); ?></span>
                         </div>
                         <div class="vs">VS</div>
-                        <div
-                            class="upcoming-team">
+                        <div class="upcoming-team">
                             <span><?php echo htmlspecialchars($match['away_team_name']); ?></span>
                         </div>
                     </div>
 
                     <?php if ($match['status'] == 'live'): ?>
                     <div class="live-match">
-                        <div
-                            style="text-align: center; color: #dc3545; font-weight: bold; margin-top: 10px;">
+                        <div style="text-align: center; color: #dc3545; font-weight: bold; margin-top: 10px;">
                             🔴 LIVE NOW
                         </div>
                     </div>
@@ -1076,12 +979,10 @@ header("Expires: 0");
 
             <!-- Tournament Statistics (if no data available, show message) -->
             <?php if (empty($valorantStandings) && empty($mlStandings) && empty($dotaStandings)): ?>
-            <div
-                class="section tournament-standings">
+            <div class="section tournament-standings">
                 <h2>Tournament Information</h2>
                 <div class="update-card">
-                    <div class="update-content"
-                        style="text-align: center; padding: 40px;">
+                    <div class="update-content" style="text-align: center; padding: 40px;">
                         <i data-feather="calendar"
                             style="width: 48px; height: 48px; color: #ccc; margin-bottom: 20px;"></i>
                         <h3>No Active Tournaments

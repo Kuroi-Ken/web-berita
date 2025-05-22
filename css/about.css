@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #333; /* Light background for the about page */
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Specific styles for the About Us content */
+.about-container {
+    padding: 100px 40px 40px 100px; /* Adjust padding for topbar and sidebar */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); /* Adjust min-height to account for topbar */
+}
+
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    gap: 40px; /* Space between image and content */
+}
+
+.about-image-wrapper {
+    flex: 1;
+    min-width: 250px; /* Minimum width for image to prevent it from becoming too small */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image {
+    width: 280px; /* Fixed width for the image */
+    height: 280px; /* Fixed height for the image */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border: 5px solid #000; /* Black border around the circle */
+    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1); /* Larger, softer shadow outside the border */
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-image:hover {
+    transform: scale(1.03); /* Slightly enlarge on hover */
+}
+
+.about-content {
+    flex: 2;
+    min-width: 300px; /* Minimum width for content */
+    max-width: 600px;
+}
+
+.about-content h1 {
+    font-size: 2.8em;
+    color: #1f1f1f;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.about-content h2 {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.about-content p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.about-content p strong {
+    color: #000;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .about-container {
+        padding: 80px 20px 20px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .about-section {
+        flex-direction: column; /* Stack image and content vertically */
+        text-align: center;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .about-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-content h1 {
+        font-size: 2.2em;
+    }
+
+    .about-content h2 {
+        font-size: 1.2em;
+    }
+
+    .about-content p {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-section {
+        padding: 20px;
+    }
+
+    .about-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .about-content h1 {
+        font-size: 1.8em;
+    }
+}
