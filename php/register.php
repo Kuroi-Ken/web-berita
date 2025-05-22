@@ -52,7 +52,7 @@ session_start();
         </div>
 
         <div class="side-image">
-            <img src="../assets/njir.jpg" alt="Illustration" />
+            <img src="../assets/champion3.png" alt="Illustration" />
             <p>Stay informed and never miss a beat<br><strong>with Game News</strong></p>
         </div>
     </div>

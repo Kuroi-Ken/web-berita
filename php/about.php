@@ -39,7 +39,7 @@ if (!isset($_SESSION['username'])) {
             <li><a href="#">Profile (<?php echo htmlspecialchars($_SESSION['username']); ?>)</a></li>
             <li><a href="../index.php">Home</a></li>
             <li><a href="about.php">About</a></li>
-            <li><a href="help.html">Help</a></li>
+            <li><a href="https://wa.me/6281236998967" target="_blank" rel="noopener noreferrer">Help </a></li>
             <li><a href="../php/logout.php">Logout</a></li>
         </ul>
     </div>

@@ -65,8 +65,7 @@ header("Expires: 0");
                 <li><a href="#">Home</a></li>
                 <li><a href="php/about.php">About</a>
                 </li>
-                <li><a href="help.html">Help</a>
-                </li>
+                <li><a href="https://wa.me/6281236998967" target="_blank" rel="noopener noreferrer">Help</a></li>
                 <li><a href="php/logout.php">Logout</a>
                 </li>
             </ul>
@@ -82,7 +81,7 @@ header("Expires: 0");
                     <button class="explore">EXPLORE
                         MORE</button>
                 </div>
-                <div class="slide slide2">
+                <div class=" slide slide2">
                     <h1>Valorant</h1>
                     <p>Valorant Champions 2024:
                         Trace Esports Melaju ke
@@ -538,7 +537,7 @@ header("Expires: 0");
                         </p>
                         <div class="update-quote">
                             <blockquote>
-                                "<?php echo htmlspecialchars(substr($news['content'], 0, 150)); ?>..."
+                                "<?php echo htmlspecialchars(substr($news['content'] ?? '', 0, 150)); ?>..."
                             </blockquote>
                             <cite>—
                                 <?php echo htmlspecialchars($news['author_name'] ?? 'Game News Team'); ?></cite>
